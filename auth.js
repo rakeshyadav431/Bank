@@ -1,25 +1,12 @@
-// Protect Page
-if (localStorage.getItem("isLoggedIn") !== "true") {
-  window.location.href = "login.html";
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+function getAccount(acc){
+  return db.collection("accounts").doc(acc);
 }
-
-// Show user info
-document.addEventListener("DOMContentLoaded", () => {
-  let user = localStorage.getItem("currentUser");
-  let time = localStorage.getItem("loginTime");
-
-  document.getElementById("welcome").innerText = "Welcome " + user + " 👨‍💼";
-  document.getElementById("lastLogin").innerText = "Last Login: " + time;
-});
-
-// Logout
-function logout() {
-  localStorage.clear();
-  window.location.href = "login.html";
-}
-
-// Auto Logout after 2 minutes (demo)
-setTimeout(() => {
-  alert("Session expired! Login again.");
-  logout();
-}, 120000);
