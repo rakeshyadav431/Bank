@@ -1,33 +1,18 @@
 body {
   font-family: Arial;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
   text-align: center;
-}
-
-.container {
-  background: white;
-  padding: 20px;
-  margin: 40px auto;
-  width: 320px;
-  border-radius: 12px;
-  box-shadow: 0px 0px 15px gray;
+  background: #f4f6f8;
 }
 
 input {
-  width: 90%;
   padding: 10px;
-  margin: 8px;
+  margin: 5px;
 }
 
 button {
   padding: 10px;
+  margin: 5px;
   background: #007bff;
   color: white;
   border: none;
-  margin: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
 }
